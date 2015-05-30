@@ -1,6 +1,6 @@
 package com.heboot.hotel.model;
 /**
- * 酒店实体
+ * 酒店实体 tr
  * @author Hebo
  */
 public class User {
