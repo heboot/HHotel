@@ -11,7 +11,7 @@ public class TestController implements Controller {
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-		// 1、收集参数、验证参数 test
+		// 1、收集参数、验证参数 
 		// 2、绑定参数到命令对象
 		// 3、将命令对象传入业务对象进行业务处理
 		// 4、选择下一个页面
