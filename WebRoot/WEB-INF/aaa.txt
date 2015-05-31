@@ -1,6 +1,0 @@
-	<!-- <bean id="userDaoImpl3" class="com.xxt.ibatis.dbcp.dao.impl.UserDaoImpl3">
-		<!--注入SqlSessionTemplate实例 -->
-		<!--<property name="sqlSessionTemplate" ref="sqlSession" />
-		<!--也可直接注入SqlSessionFactory实例，二者都指定时，SqlSessionFactory失效 -->
-		<!-- <property name="sqlSessionFactory" ref="sqlSessionFactory" /> -->
-<!--	</bean> -->
