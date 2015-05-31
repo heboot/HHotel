@@ -21,7 +21,7 @@ public class APPConfig extends JFinalConfig {
 	}
 
 	public void configPlugin(Plugins me) {
-		C3p0Plugin cp = new C3p0Plugin("jdbc:mysql://120.25.152.216:3306/HHotel", "root", "moumima4");
+		C3p0Plugin cp = new C3p0Plugin("jdbc:mysql://你猜", "你猜", "你猜");
 		me.add(cp);
 		ActiveRecordPlugin arp = new ActiveRecordPlugin(cp); 
 		me.add(arp);
