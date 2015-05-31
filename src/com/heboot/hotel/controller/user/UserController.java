@@ -1,4 +1,4 @@
-package com.heboot.hotel.controller;
+package com.heboot.hotel.controller.user;
 
 import com.jfinal.core.Controller;
 
