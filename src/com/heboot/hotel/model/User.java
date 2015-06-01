@@ -11,6 +11,7 @@ public class User extends Model<User>{
 	private int id;
 	private String name;
 	private String passWord;
+	private String phoneNumber;
 	private int sex;
 	private int age;
 	private double balance;
@@ -70,6 +71,12 @@ public class User extends Model<User>{
 	}
 	public void setAccount_type(int account_type) {
 		this.account_type = account_type;
+	}
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 	
 	

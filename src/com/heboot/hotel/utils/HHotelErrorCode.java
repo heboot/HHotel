@@ -6,6 +6,10 @@ package com.heboot.hotel.utils;
 public enum HHotelErrorCode {
 
 	STATUS_1001(1001,"手机号码被占用"),
+	STATUS_1002(1002,"用户不存在"),
+	STATUS_1003(1003,"登录失败"),
+	STATUS_1004(1004,"密码错误"),
+	STATUS_2000(2000,"操作成功"),
 	STATUS_5000(5000,"服务器异常");
 	
 	private int code;

@@ -1,7 +1,10 @@
 package com.heboot.hotel.service;
 
+import java.sql.SQLDataException;
+
 import com.heboot.hotel.model.User;
 import com.heboot.hotel.sql.SQLDescribe;
+import com.heboot.hotel.utils.TimeUtils;
 import com.jfinal.plugin.activerecord.Db;
 
 public class UserService {
@@ -23,10 +26,28 @@ public class UserService {
 	 * @param phoneNumber
 	 * @return
 	 */
-	public static int doQueryPhone(String phoneNumber){
-		int result = Db.queryInt(SQLDescribe.queryPhoneNumber,phoneNumber);
-		return result;
+	public static User doQueryPhone(String phoneNumber){
+//		int result = Db.queryInt(SQLDescribe.queryPhoneNumber,phoneNumber);
+		User u = User.dao.findFirst(SQLDescribe.queryUserByPhoneNumber,phoneNumber);
+		return u;
 	}
 	
+	/**
+	 /*核对用户密码
+	 */
+	public static boolean doCheckUserPassWord(String phoneNumber,String passWord){
+		return Db.queryBoolean(SQLDescribe.checkUserPassWord,phoneNumber,passWord);
+	}
+	
+	/**
+	 * 登录
+	 * @param user
+	 * @return
+	 */
+	public static boolean doLogin(User user){
+		user.setLastlogin_time(TimeUtils.getCurrentTime());
+		boolean result = Db.queryBoolean(SQLDescribe.queryUserByNameAndPassWord,user.getName(),user.getPassWord(),user.getAccount_type());
+		return result;
+	}
 	
 }

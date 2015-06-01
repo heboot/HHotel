@@ -4,6 +4,8 @@ public class BaseResponse {
 	private boolean status;
 	private int statusCode;
 	private String describe;
+	private String errorInfo;
+	private String json;
 	public boolean isStatus() {
 		return status;
 	}
@@ -22,4 +24,17 @@ public class BaseResponse {
 	public void setDescribe(String describe) {
 		this.describe = describe;
 	}
+	public String getErrorInfo() {
+		return errorInfo;
+	}
+	public void setErrorInfo(String errorInfo) {
+		this.errorInfo = errorInfo;
+	}
+	public String getJson() {
+		return json;
+	}
+	public void setJson(String json) {
+		this.json = json;
+	}
+	
 }

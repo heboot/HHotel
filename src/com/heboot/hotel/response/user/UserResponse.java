@@ -5,6 +5,7 @@ import com.heboot.hotel.response.BaseResponse;
 
 public class UserResponse extends BaseResponse {
 	private User user;
+	
 
 	public User getUser() {
 		return user;
