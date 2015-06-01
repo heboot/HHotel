@@ -50,4 +50,15 @@ public class UserService {
 		return result;
 	}
 	
+	/**
+	 * 修改密码
+	 */
+	
+	/**
+	 * 上传头像
+	 */
+	
+	
+	
+	
 }
