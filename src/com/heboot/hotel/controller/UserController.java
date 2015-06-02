@@ -1,8 +1,7 @@
-package com.heboot.hotel.controller.user;
+package com.heboot.hotel.controller;
 
 import javax.mail.search.SentDateTerm;
 
-import com.heboot.hotel.controller.BaseController;
 import com.heboot.hotel.model.User;
 import com.heboot.hotel.response.user.UserResponse;
 import com.heboot.hotel.service.UserService;

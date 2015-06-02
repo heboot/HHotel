@@ -1,6 +1,9 @@
 package com.heboot.hotel.model;
 
-public class Hotel {
+import com.jfinal.plugin.activerecord.Model;
+
+public class Hotel extends Model<Hotel>{
+	public static final Hotel dao = new Hotel();
 	private int id;
 	private String name;
 	private String address;
@@ -9,6 +12,7 @@ public class Hotel {
 	private String describe;
 	private double lat;
 	private double lon;
+	private int status;
 	public int getId() {
 		return id;
 	}
@@ -56,6 +60,12 @@ public class Hotel {
 	}
 	public void setLon(double lon) {
 		this.lon = lon;
+	}
+	public int getStatus() {
+		return status;
+	}
+	public void setStatus(int status) {
+		this.status = status;
 	}
 	
 }
