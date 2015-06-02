@@ -1,6 +1,5 @@
 package com.heboot.hotel.controller;
 
-import com.google.gson.Gson;
 import com.heboot.hotel.model.Hotel;
 import com.heboot.hotel.service.HotelService;
 import com.heboot.hotel.utils.GsonUtils;
