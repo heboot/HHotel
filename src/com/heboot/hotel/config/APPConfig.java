@@ -5,6 +5,7 @@ import com.heboot.hotel.controller.HotelController;
 import com.heboot.hotel.controller.UserController;
 import com.heboot.hotel.model.Hotel;
 import com.heboot.hotel.model.User;
+import com.heboot.hotel.plugin.ShiroPlugin;
 import com.jfinal.config.Constants;
 import com.jfinal.config.Handlers;
 import com.jfinal.config.Interceptors;
@@ -26,12 +27,13 @@ public class APPConfig extends JFinalConfig {
 	}
 
 	public void configPlugin(Plugins me) {
-		C3p0Plugin cp = new C3p0Plugin("jdbc:mysql://125.25.15.211:3306/HHotel", "root", "123@qwe0..");
+		C3p0Plugin cp = new C3p0Plugin("jdbc:mysql://120.25.152.216:3306/HHotel", "root", "moumima4");
 		me.add(cp);
 		ActiveRecordPlugin arp = new ActiveRecordPlugin(cp); 
 		me.add(arp);
 		arp.addMapping("tb_user", User.class);
 		arp.addMapping("tb_hotel", Hotel.class);
+		me.add(new ShiroPlugin());  
 	}
 
 	public void configInterceptor(Interceptors me) {
