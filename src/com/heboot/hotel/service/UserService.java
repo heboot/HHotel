@@ -1,7 +1,11 @@
 package com.heboot.hotel.service;
 
-import java.sql.SQLDataException;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
+import com.heboot.hotel.model.Permission;
+import com.heboot.hotel.model.Role;
 import com.heboot.hotel.model.User;
 import com.heboot.hotel.sql.SQLDescribe;
 import com.heboot.hotel.utils.TimeUtils;
@@ -59,6 +63,46 @@ public class UserService {
 	 */
 	
 	
+	/**
+	 * 根据用户ID查询用户角色
+	 */
+	public static List<Role> doGetUserRolesByUserId(int userId){
+		return Role.dao.find("select * from tb_role where user_id = ?",userId);
+	}
+	
+	
+	/**
+	 * 根据用户ID查询用户角色
+	 */
+	public static Set<String> doGetUserRolesByUserName(String userName){
+		List<Role> r = Role.dao.find("select role_name from tb_role where user_name = ?",userName);
+		Set<String> set = new HashSet<String> ();
+		if(r != null && r.size() > 0){
+			for(int i=0;i<r.size();i++){
+				set.add(r.get(i).getRole_name());
+			}
+		}
+		return set;
+	}
+	
+	/**
+	 * 
+	 */
+	public static Set<String> doGetUserPermissionsByUserName(String userName)
+	{
+		List<Permission> r = Permission.dao.find("select name from tb_permissions where user_name = ?",userName);
+		Set<String> set = new HashSet<String> ();
+		if(r != null && r.size() > 0){
+			for(int i=0;i<r.size();i++){
+				set.add(r.get(i).getName());
+			}
+		}
+		return set;
+	}
+	
+	public static User doGetUserByUserName(String userName){
+		return User.dao.findFirst("select * from tb_user where name = ?",userName);
+	}
 	
 	
 }
