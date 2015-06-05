@@ -27,7 +27,7 @@ public class MyRealm extends AuthorizingRealm {
     	  String username = (String)principals.getPrimaryPrincipal();  
           SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();  
           authorizationInfo.setRoles(UserService.doGetUserRolesByUserName(username));  
-          authorizationInfo.setStringPermissions(UserService.dogetUserPermissionsByUserName(username));  
+          authorizationInfo.setStringPermissions(UserService.doGetUserPermissionsByUserName(username));  
           return authorizationInfo;  
     }  
   
@@ -45,12 +45,13 @@ public class MyRealm extends AuthorizingRealm {
 //              throw new LockedAccountException(); //帐号锁定  
 //          }  
           //交给AuthenticatingRealm使用CredentialsMatcher进行密码匹配，如果觉得人家的不好可以在此判断或自定义实现  
-          SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(  
+          /*SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(  
                   user.getPhoneNumber(), //用户名  
                   user.getPassWord(), //密码  
                   ByteSource.Util.bytes(user.getCredentialsSalt()),//salt=username+salt  
                   getName()  //realm name  
-          );  
-          return authenticationInfo;  
+          );  */
+//          return authenticationInfo;  
+          return null;
     }  
 }

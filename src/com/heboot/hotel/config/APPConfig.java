@@ -33,7 +33,6 @@ public class APPConfig extends JFinalConfig {
 		me.add(arp);
 		arp.addMapping("tb_user", User.class);
 		arp.addMapping("tb_hotel", Hotel.class);
-		me.add(new ShiroPlugin());  
 	}
 
 	public void configInterceptor(Interceptors me) {
